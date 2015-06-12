@@ -2,7 +2,7 @@
 This is the project for the CodeNewbie Ruby Monday group. You can join the group [here](https://codenewbie.typeform.com/to/uwsWlZ). To get started, read the following, and if you get stuck, reach out to the host [Angel Jose](http://twitter.com/ajose01).
 
 ### About this project
-We are building a newbie code blog app to help us develop our [Ruby on Rails] skills. We meet weekly [here](https://codenewbie.typeform.com/to/uwsWlZ) in the "ruby-monday" channel on Monday at 9PM EST, so mark your calendars and stop by! There, we'll review the project, look at code together, and share what we learned. 
+We are building a newbie code blog app to help us develop our Ruby-on-Rails skills. We meet weekly [here](https://codenewbie.typeform.com/to/uwsWlZ) in the "ruby-monday" channel on Monday at 9PM EST, so mark your calendars and stop by! There, we'll review the project, look at code together, and share what we learned. 
 
 In particular, we hope to:
 
