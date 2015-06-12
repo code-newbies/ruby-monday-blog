@@ -38,7 +38,7 @@ We'll be using the Feature Branch Workflow for these projects. This is a great b
 - **Have more git questions?** If you've gone through the material above and want to walk through git concepts with a real person, send us a note <hello@codenewbie.org> or a message on the #ruby-monday slack channel and we'd be happy to setup some time to do it together.
 
 ### Skill requirements
-You're welcome to start contributing at any level, but it's helpful to have some knowledge of [ Ruby / Rails ]. Although you don't need have have fully completed the following tutorials, these provide a solid skillset of the type of coding we'll be doing:
+You're welcome to start contributing at any level, but it's helpful to have some knowledge of Ruby-on-Rails. Although you don't need have have fully completed the following tutorials, these provide a solid skillset of the type of coding we'll be doing:
 
 Free:
 - https://www.railstutorial.org/book
@@ -64,7 +64,7 @@ We use pull requests so you can get your code reviewed by others before merging 
 - Make a feature branch for the issue you're working on. The first part of the branch name should be your initials, like this: `sy-allows-users-to-update-avatar`
 - Push your branch to origin. 
 - When your feature is done and ready to be reviewed, make pull request.
-- Copy and paste your pull request link to the [INSERT GROUP NAME ] Slack channel for review.
+- Copy and paste your pull request link to the #ruby-monday Slack channel for review.
 - Once you get some feedback on your pull request and a final thumbs up from a community member, merge to master & the close branch.
 
 ### Come to Ruby Monday!
