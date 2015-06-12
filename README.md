@@ -1,5 +1,5 @@
 # Welcome to the Ruby Monday Project! 
-This is the project for the CodeNewbie Ruby Monday group. You can join the group [here](https://codenewbie.typeform.com/to/uwsWlZ). To get started, read the following, and if you get stuck, reach out to [Angel Jose](http://twitter.com/ajose01) the host.
+This is the project for the CodeNewbie Ruby Monday group. You can join the group [here](https://codenewbie.typeform.com/to/uwsWlZ). To get started, read the following, and if you get stuck, reach out to the host [Angel Jose](http://twitter.com/ajose01).
 
 ### About this project
 We are building a newbie code blog app to help us develop our [Ruby on Rails] skills. We meet weekly [here](https://codenewbie.typeform.com/to/uwsWlZ) in the "ruby-monday" channel on Monday at 9PM EST, so mark your calendars and stop by! There, we'll review the project, look at code together, and share what we learned. 
@@ -16,9 +16,9 @@ In particular, we hope to:
 ### Tech requirements
 You'll need to have installed [Ruby on Rails ] to begin. Here's how:
 
-- rails setup (https://gorails.com/setup/)
+- Rails setup (https://gorails.com/setup/) Ruby 2.2.2 / Rails 4.2.1
 - Mac
-- Windows
+- Windows (Recommend a vagrant setup).  (https://gorails.com/guides/using-vagrant-for-rails-development)
 - Linux
 
 You'll also need a Github account and some knowledge of git. If you're not comfortable using git, that's perfectly fine! Start by looking at the following resources:
@@ -38,12 +38,16 @@ We'll be using the Feature Branch Workflow for these projects. This is a great b
 - **Have more git questions?** If you've gone through the material above and want to walk through git concepts with a real person, send us a note <hello@codenewbie.org> or a message on the #ruby-monday slack channel and we'd be happy to setup some time to do it together.
 
 ### Skill requirements
-You're welcome to start contributing at any level, but it's helpful to have some knowledge of [ Ruby / Rails ]. To get you started go through the following tutorials first.
+You're welcome to start contributing at any level, but it's helpful to have some knowledge of [ Ruby / Rails ]. Although you don't need have have fully completed the following tutorials, these provide a solid skillset of the type of coding we'll be doing:
 
-- INSERT RESOURCE #2
-- INSERT RESOURCE #2
+Free:
+- https://www.railstutorial.org/book
+- http://www.theodinproject.com/
+Affordable:
+- https://www.codeschool.com/courses/rails-for-zombies-redux
+- https://teamtreehouse.com/tracks/rails-development
 
-Once you're done, come back and get your code on!
+Once you've got a good grasp on the concepts, come back and get your code on!
 
 There's a big gap between the knowledge you gain when you go through the tutorials, and the skills you need to be job ready. We hope to help fill that big by working on collaborative projects like this. So if you're tired of doing tutorials and you're looking for some real-world experience, this is for you.
 
