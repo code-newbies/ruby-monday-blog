@@ -43,6 +43,7 @@ You're welcome to start contributing at any level, but it's helpful to have some
 Free:
 - https://www.railstutorial.org/book
 - http://www.theodinproject.com/
+
 Affordable:
 - https://www.codeschool.com/courses/rails-for-zombies-redux
 - https://teamtreehouse.com/tracks/rails-development
