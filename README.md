@@ -62,6 +62,7 @@ We use pull requests so you can get your code reviewed by others before merging 
 - Assign that feature to yourself.
 - Clone this repo.
 - Make a feature branch for the issue you're working on. The first part of the branch name should be your initials, like this: `sy-allows-users-to-update-avatar`
+- Every feature should start with writing tests. You can choose to write only the tests, and unassign yourself from the repo once these are done so someone else can code the features. If you choose to complete the full feature yourself, then just continue to work through without unassigning yourself.
 - Push your branch to origin. 
 - When your feature is done and ready to be reviewed, make pull request.
 - Copy and paste your pull request link to the #ruby-monday Slack channel for review.
