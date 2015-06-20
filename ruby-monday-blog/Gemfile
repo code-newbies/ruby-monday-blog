@@ -36,6 +36,9 @@ group :development, :test do
   # Install rspec for testing
   gem 'rspec-rails', '~> 3.0'
   
+  # Install Capybara for testing
+  gem 'capybara', '~> 2.4.4'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
