@@ -1,9 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe Post, type: :model do
-  it "makes a new post with title" do
-    post = Post.new(title: "My Post", body:"My Post Content")
-    expect(post.title).to eq("My Post")
-    expect(post.body).to eq("My Post Content")
+RSpec.describe Post do
+  describe "initial setup" do
+    let(:post) {Post.create(title:"My Post", body:"My Content")}
+
+    it "makes a new post with title" do
+      expect(post.title).to eq("My Post")
+    end
+
+    it "makes a new post with body" do
+      expect(post.body).to eq("My Content")
+    end
   end
 end
