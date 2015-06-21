@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Post do
+describe Post do
   describe "initial setup" do
     let(:post) {Post.create(title:"My Post", body:"My Content")}
 
