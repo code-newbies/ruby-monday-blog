@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   # Define enum for roles  ref: http://railsapps.github.io/rails-authorization.html
   # This allows roles to be stored in the db as an int index, but allows us to use sensible, familiar strings for names.
-  enum role: [:reader, :writer, :admin]
+  enum role: [:reader, :author, :admin]
 
   # If we're creating a new user record, set the default role unless otherwise noted.
   after_initialize :set_default_role, :if => :new_record?
