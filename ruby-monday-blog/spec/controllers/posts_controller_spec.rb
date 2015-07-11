@@ -11,6 +11,8 @@ RSpec.feature "Users can create a new post" do
     click_button "Create Post"
     expect(page).to have_content "Post has been created."
     expect(page).to have_content "My Title"
+    expect(page).to have_content "My Body"
+    expect(page).to have_content "Ruby"
 
   end
 end
