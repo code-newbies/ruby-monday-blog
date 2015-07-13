@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+$white: #fff;
+$ruby: #bc0d00;
+h1, h2, h3, h4, h5, h6{
+	font-family: "Lato", sans-serif;
+}
+body{
+	font-family: "Open Sans", sans-serif;
+}
+.alert-success{
+  background: $ruby;
+  color: $white;
+}
+.alert-danger{
+  background: $ruby;
+  color: $white;
+}
+.alert-warning{
+  background: $ruby;
+  color: $white;
+}
+.navbar-default {
+  background-color: $ruby;
+  border: none;
+  .navbar-brand{
+  	color: $white;
+  }
+  .navbar-nav > li > a{
+  	color: $white;
+  	&:hover{
+  		color: #333;
+  		transition: all 0.4s; 		
+  	}
+  }
+}
+.navbar{
+	border-radius: 0;
+	border: none;	
+}

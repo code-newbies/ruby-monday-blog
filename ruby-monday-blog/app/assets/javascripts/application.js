@@ -13,4 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
+
+$(function() {
+  var flashCallback;
+  flashCallback = function() {
+    return $(".alert").fadeOut();
+  };
+  $(".flash-message").bind('click', (function(_this) {
+    return function(ev) {
+      return $(".alert").fadeOut();
+    };
+  })(this));
+  return setTimeout(flashCallback, 2000);
+});
