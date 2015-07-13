@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Ruby-Monday Blog", root_path, class: "navbar-brand text-uppercase" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="text-uppercase"><%= link_to "About RMB", root_path %></li>
+        <li class="text-uppercase"><%= link_to "Contact", root_path %></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li class="text-uppercase"><%= link_to "New Posts", root_path %></li>
+          <li class="text-uppercase"><%= link_to "Latest Topics", root_path %></li>
+          <li class="text-uppercase"><%= link_to "Create New Post", root_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT <span class="caret"></span></a>
+            <ul class="dropdown-menu gemma-menu" role="menu">
+              <li class="text-uppercase"><%= link_to "Edit Profile", edit_user_registration_path %></li>
+              <li class="text-uppercase"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="text-uppercase"><%= link_to "Login", new_user_session_path %></li>
+          <li class="text-uppercase"><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
+          
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
