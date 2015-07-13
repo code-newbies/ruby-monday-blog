@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+  <h1> <%= post.title %></h1>
+  <p><%= post.body %></p>
+  <p><%= post.created_at %></p>
+  <ul>
+      <% post.tags.each do |tag| %>
+        <li><%= tag.content %></li>
+        </ul>
+        <% end %>
+      <% end %>
