@@ -4,6 +4,7 @@ describe Post do
   describe Post, 'validation' do
     it {should validate_presence_of(:title)}
     it {should validate_presence_of(:body)}
+    it {should have_many(:tags)}
   end
 
   describe "initial setup" do
@@ -15,6 +16,11 @@ describe Post do
 
     it "makes a new post with body" do
       expect(post.body).to eq("My Content")
+    end
+
+    it "has a tag with the post" do
+    @tag = post.tags.build(content:"Rails")
+    expect(@tag.content).to eq("Rails")
     end
   end
 end

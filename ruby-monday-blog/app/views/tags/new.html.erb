@@ -1,0 +1,6 @@
+<%= form_for(@tag) do |f| %>
+  <p><%= f.label :content, "Add Tag" %><br>
+    <%= f.text_field :content %>
+  </p>
+  <%= f.submit "Create Tag" %>
+  <% end %>
