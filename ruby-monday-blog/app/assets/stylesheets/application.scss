@@ -17,11 +17,20 @@
 @import "bootstrap";
 $white: #fff;
 $ruby: #bc0d00;
+$gray: #dedede;
+$montserrat: 'Montserrat', sans-serif;
+$lato: 'Lato', sans-serif;
+$open: 'Open Sans', sans-serif;
+$mobile: 480px;
+$tabet: 768px;
+
+
 h1, h2, h3, h4, h5, h6{
-	font-family: "Lato", sans-serif;
+	font-family: $montserrat;
 }
+
 body{
-	font-family: "Open Sans", sans-serif;
+	font-family: $open;
 }
 .alert-success{
   background: $ruby;
@@ -39,12 +48,25 @@ body{
   background-color: $ruby;
   border: none;
   .navbar-brand{
-  	color: $white;
+  	color: $ruby;
+    font-family: $montserrat;
+    background: $white;
+    &:hover{
+      color: $white;
+      transition: all 0.4s;
+    }
   }
+  .navbar-toggle {
+      border-color: $white;
+    }
+    .navbar-toggle .icon-bar {
+      background-color: $white;
+    }
   .navbar-nav > li > a{
   	color: $white;
   	&:hover{
-  		color: #333;
+      color: $ruby;
+      background: $white;
   		transition: all 0.4s; 		
   	}
   }
@@ -52,4 +74,43 @@ body{
 .navbar{
 	border-radius: 0;
 	border: none;	
+  margin-bottom: 0;
+}
+.landingText{
+  position: relative;
+  margin: 25vh auto;
+  color: $white;
+  h1{
+    font-size: 4em;
+  }
+  @media screen and (max-width: $mobile) {
+    margin: 25vh auto;
+    h1{
+      font-size: 2.2em;
+    }
+  }
+}
+#landingImage{
+  background: linear-gradient(rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.1)), image-url('ruby1.jpg') no-repeat 0 200px;
+  background-position: center center;
+  background-size: cover;
+  height: 500px;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+#aboutImage{
+  background: image-url('ruby2.jpg') no-repeat 0 100px;
+  background-position: center center;
+  background-size: cover;
+  height: 500px;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  
 }

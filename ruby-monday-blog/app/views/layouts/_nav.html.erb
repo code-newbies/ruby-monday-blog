@@ -14,15 +14,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="text-uppercase"><%= link_to "About RMB", root_path %></li>
-        <li class="text-uppercase"><%= link_to "Contact", root_path %></li>
+        <li class="text-uppercase"><%= link_to "About RMB", about_path %></li>
+        <li class="text-uppercase"><%= link_to "Contact", contact_path %></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li class="text-uppercase"><%= link_to "New Posts", root_path %></li>
-          <li class="text-uppercase"><%= link_to "Latest Topics", root_path %></li>
-          <li class="text-uppercase"><%= link_to "Create New Post", root_path %></li>
+          <li class="text-uppercase"><%= link_to "New Posts", posts_path %></li>
+          <li class="text-uppercase"><%= link_to "Create New Post", new_post_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT <span class="caret"></span></a>
             <ul class="dropdown-menu gemma-menu" role="menu">
