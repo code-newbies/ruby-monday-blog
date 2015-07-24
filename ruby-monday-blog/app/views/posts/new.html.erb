@@ -5,6 +5,8 @@
     <%= f.text_field :title %> 
     <%= f.label :body %>
     <%= f.text_area :body %>
+    <%= f.label :image, "Upload Image" %>
+    <%= f.file_field :image %>
     <%= f.fields_for :tags do |t| %>
     <%= t.label :content, "Tag" %>
     <%= t.text_field :content %>

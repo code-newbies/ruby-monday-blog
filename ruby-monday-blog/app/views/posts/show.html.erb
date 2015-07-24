@@ -1,6 +1,7 @@
 <h1> Show Post </h1>
 <h2><%= @post.title %></h2>
 <p><%=  @post.body %></p>
+<p><%= image_tag @post.image.url(:thumb) %></p>
 <% if @post.tags.any? %>
   <% @tags.each do |t| %>
   <p> <%= t.content %></p>
