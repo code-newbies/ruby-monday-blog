@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6 create-post">
+  <div class="row add-whitespace">
+    <div class="col-md-8 col-md-offset-2 create-post">
      <h1>NEW POST</h1>
      <%= form_for(@post) do |f| %>
        <div class="form-group">  
@@ -17,7 +17,7 @@
           <%= t.text_field :content, class: "form-control" %>
          <% end %>
        </div>
-       <div class="form-group" id="submit">
+       <div class="form-group text-right">
           <%= f.submit "Create Post", class: "btn btn-default btn-lg" %>
           <% end %>
       </div>
