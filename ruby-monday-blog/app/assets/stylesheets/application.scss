@@ -114,3 +114,13 @@ body{
   filter: grayscale(100%);
   
 }
+
+.create-post{
+  background-color: $gray;
+  padding: 20px 40px;
+  margin: 40px 0px;
+}
+
+#submit{
+  text-align: right;
+}
