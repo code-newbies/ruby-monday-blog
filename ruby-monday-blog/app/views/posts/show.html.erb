@@ -1,8 +1,30 @@
-<h1> Show Post </h1>
-<h2><%= @post.title %></h2>
-<p><%=  @post.body %></p>
-<% if @post.tags.any? %>
-  <% @tags.each do |t| %>
-  <p> <%= t.content %></p>
-  <% end %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-2">
+			<h1>SHOW POST</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-2 show-post">
+			<h2><%= @post.title %></h2>
+			<p><%=  @post.body %></p>
+			<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 
+			&nbsp;
+			<% if @post.tags.any? %>
+	  			<% @tags.each do |t| %>
+	 			<button class="btn btn-default btn-sm"><%= t.content %></button>
+	  			<% end %>
+			<% end %>
+			<hr />
+			<div class="row">
+				<div class="col-md-12 comments">
+					<h2>COMMENTS</h2>
+					<p>Will need to add display all comments functionality here (partial?), and the ability to add your own.</p>
+				</div>
+			</div>
+		</div>
+		<%= render 'sidebar' %>
+	</div>
+	
+
+</div>

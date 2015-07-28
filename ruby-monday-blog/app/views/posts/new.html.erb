@@ -1,14 +1,26 @@
-<h1>New Post</h1>
-<%= form_for(@post) do |f| %>
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %> 
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-    <%= f.fields_for :tags do |t| %>
-    <%= t.label :content, "Tag" %>
-    <%= t.text_field :content %>
-    <% end %>
-    <%= f.submit "Create Post" %>
-  </p>
-  <% end %>
+<div class="container">
+  <div class="row add-whitespace">
+    <div class="col-md-8 col-md-offset-2 create-post">
+     <h1>NEW POST</h1>
+     <%= form_for(@post) do |f| %>
+       <div class="form-group">  
+         <h3><%= f.label :title %></h3>
+         <%= f.text_field :title, class: "form-control" %> 
+       </div>
+       <div class="form-group">
+          <h3><%= f.label :body %></h3>
+          <%= f.text_area :body, class: "form-control", rows: 15 %>
+       </div>
+       <div class="form-group">
+          <%= f.fields_for :tags do |t| %>
+         <h3><%= t.label :content, "Tag" %></h3>
+          <%= t.text_field :content, class: "form-control" %>
+         <% end %>
+       </div>
+       <div class="form-group text-right">
+          <%= f.submit "Create Post", class: "btn btn-default btn-lg" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

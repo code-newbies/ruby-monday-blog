@@ -1,6 +1,14 @@
-<%= form_for(@tag) do |f| %>
-  <p><%= f.label :content, "Add Tag" %><br>
-    <%= f.text_field :content %>
-  </p>
-  <%= f.submit "Create Tag" %>
+<div class="container">
+	<div class="row add-whitespace">
+    	<div class="col-md-8 col-md-offset-2 create-post">
+	<%= form_for(@tag) do |f| %>
+  <div class="form-group">
+  	<H2><%= f.label :content, "Add Tag" %></h2>
+  	
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+  <%= f.submit "Create Tag", class: "btn btn-default btn-md" %>
   <% end %>
+		</div>
+	</div>
+</div>
