@@ -10,17 +10,23 @@
 			  <h2> <%= post.title %></h2>
 			  <p><%= post.body %></p>
 			  <p>Created at: <%= post.created_at %></p>
-				<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 
+				 
 				&nbsp;
-			      <% post.tags.each do |tag| %>
-			        <button class="btn btn-default btn-sm"><%= tag.content %></button>
 
-			        <% end %>
-			        <br />
-			        <button type="button" class="btn btn-link">View Comments</Button>
-			        	<!-- View Comments should link to the corresponding post page -->
-			        <hr />
-			      <% end %>
+				      	<% post.tags.each do |tag| %>
+				      		<% unless tag.content.empty? %>
+				      			<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+				        			<button class="btn btn-default btn-sm"><%= tag.content %></button>
+				        	<% end %>
+
+				        <% end %>
+
+				        <br />
+				        <button type="button" class="btn btn-link">View Comments</Button>
+				        	<!-- View Comments should link to the corresponding post page -->
+				        <hr />
+				      <% end %>
+			      
 		</div>
 		<%= render 'sidebar' %>
 	</div>
