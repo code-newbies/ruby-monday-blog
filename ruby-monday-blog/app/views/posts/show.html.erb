@@ -10,6 +10,7 @@
 			<p><%=  @post.body %></p>
 			<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 
 			&nbsp;
+			<p><%= image_tag @post.image.url(:thumb) %></p>
 			<% if @post.tags.any? %>
 	  			<% @tags.each do |t| %>
 	 			<button class="btn btn-default btn-sm"><%= t.content %></button>
@@ -28,3 +29,4 @@
 	
 
 </div>
+

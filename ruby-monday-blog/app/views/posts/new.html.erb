@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row add-whitespace">
     <div class="col-md-8 col-md-offset-2 create-post">
@@ -11,6 +12,11 @@
           <h3><%= f.label :body %></h3>
           <%= f.text_area :body, class: "form-control", rows: 15 %>
        </div>
+       <div class ="form-group">
+       <h3><%= f.label :image, "Upload Image" %></h3>
+    <%= f.file_field :image %>
+       </div>
+       
        <div class="form-group">
           <%= f.fields_for :tags do |t| %>
          <h3><%= t.label :content, "Tag" %></h3>
@@ -24,3 +30,4 @@
     </div>
   </div>
 </div>
+

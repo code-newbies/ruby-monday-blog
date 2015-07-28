@@ -37,6 +37,9 @@ gem 'google-webfonts-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Use Paperclip to upload files
+gem 'paperclip', '~> 4.3'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
