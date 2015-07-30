@@ -37,6 +37,9 @@ gem 'google-webfonts-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Use Paperclip to upload files
+gem 'paperclip', '~> 4.3'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -59,7 +62,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  # Install Faker to seed data to the DB
+  # Install Faker and Popullator to seed data to the DB
   gem 'faker', '~> 1.4.3'
   gem 'populator'
 end
