@@ -16,7 +16,7 @@
 				      	<% post.tags.each do |tag| %>
 				      		<% unless tag.content.empty? %>
 				      			<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-				        			<button class="btn btn-default btn-sm"><%= tag.content %></button>
+                                                        <button class="btn btn-default btn-sm"><%= link_to tag.content, tag_path(tag) %></button>
 				        	<% end %>
 
 				        <% end %>
