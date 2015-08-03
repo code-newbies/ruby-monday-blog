@@ -7,20 +7,22 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-2 show-post">
 			<h2><%= @post.title %></h2>
-			<p><%=  @post.body %></p>
-			<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 
-			&nbsp;
-			<p><%= image_tag @post.image.url(:thumb) %></p>
-			<% if @post.tags.any? %>
-	  			<% @tags.each do |t| %>
-	 			<button class="btn btn-default btn-sm"><%= t.content %></button>
-	  			<% end %>
+			<p>
+			<%= image_tag @post.image.url(:thumb), class: 'blog-img' %><%=  @post.body %></p>
+			<p>
+			<% @post.tags.each do |tag| %>
+				<% unless tag.content.empty? %>
+				    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+				    &nbsp;
+				     <button class="btn btn-default btn-sm"><%= tag.content %></button>
+				<% end %>
 			<% end %>
+		</p>
 			<hr />
 			<div class="row">
 				<div class="col-md-12 comments">
 					<h2>COMMENTS</h2>
-					<p>Will need to add display all comments functionality here (partial?), and the ability to add your own.</p>
+					<p>Coming Soon</p>
 				</div>
 			</div>
 		</div>
