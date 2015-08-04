@@ -8,7 +8,11 @@
 		<div class="col-md-6 col-md-offset-2 show-post">
 			<h2><%= @post.title %></h2>
 			<p>
-				<%= image_tag @post.image.url(:thumb), class: 'blog-img' %><%=  @post.body %>
+				<% if @post.image %>
+					<%= image_tag @post.image.url(:thumb), class: 'blog-img' %>
+				<% end %>
+
+				<%=  @post.body %>
 			</p>
 			<p>
 				&nbsp;
