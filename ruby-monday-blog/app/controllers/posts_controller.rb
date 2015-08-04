@@ -10,8 +10,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
+    params = post_params
+
+    # Extract the tag
+    tag = params.extract!(:tags_attributes)
+    tag_data = tag[:tags_attributes]["0"]
+    prepared_tag = Tag.find_or_create_by(tag_data)
+
+    @post = Post.new(params)
+    prepared_tag.posts << @post
+
+    if @post.persisted?
       flash[:notice] = "Post has been created."
       redirect_to @post
     else
@@ -27,6 +36,6 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:body, :title, :image,
-                                 :tags_attributes => [:id, :content])
+      :tags_attributes => [:id, :content])
   end
 end

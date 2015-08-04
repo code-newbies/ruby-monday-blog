@@ -6,7 +6,7 @@ describe PostsController do
     post: {
       body:  'lorem',
       title: 'ipsum',
-      tags_attributes: [{ content: 'Ruby' }]
+      tags_attributes: {"0" => { content: 'Ruby' }}
     }
   }
   end
