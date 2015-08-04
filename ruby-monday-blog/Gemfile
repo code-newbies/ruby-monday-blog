@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+# gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -46,13 +46,13 @@ gem 'paperclip', '~> 4.3'
 group :development, :test do
   # Install rspec for testing
   gem 'rspec-rails', '~> 3.0'
-  
+
   # Install Capybara for testing
   gem 'capybara', '~> 2.4.4'
-  
+
   # Install Shoulda Matchers for validation testing
   gem 'shoulda'
-  
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -66,4 +66,3 @@ group :development, :test do
   gem 'faker', '~> 1.4.3'
   gem 'populator'
 end
-
