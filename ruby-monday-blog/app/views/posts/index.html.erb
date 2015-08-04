@@ -1,32 +1,28 @@
-<div class="container">
+<div class="container posts-index">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-2">
-			<h1>Welcome to the Blog</h1>	
+			<h1>Welcome to the Blog</h1>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-2 show-all-posts">
 			<% @posts.each do |post| %>
-			  <h2> <%= post.title %></h2>
-			  <p><%= post.body %></p>
-			  <p>Created at: <%= post.created_at %></p>
-				 
-				&nbsp;
-
-				      	<% post.tags.each do |tag| %>
-				      		<% unless tag.content.empty? %>
-				      			<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-				        			<button class="btn btn-default btn-sm"><%= tag.content %></button>
-				        	<% end %>
-
-				        <% end %>
-
-				        <br />
-				        <button type="button" class="btn btn-link">View Comments</Button>
-				        	<!-- View Comments should link to the corresponding post page -->
-				        <hr />
-				      <% end %>
-			      
+			  <%= link_to post do %>
+					<h2><%= post.title %></h2>
+				<% end %>
+			  <p class="post-timestamp">Posted <%= time_ago_in_words post.created_at %>&nbsp;ago</p>
+			  <p class="post-body"><%= post.body %></p>
+      	<% post.tags.each do |tag| %>
+      		<% unless tag.content.empty? %>
+      			<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+      			<button class="btn btn-default btn-sm"><%= tag.content %></button>
+        	<% end %>
+        <% end %>
+        <br />
+        <button type="button" class="btn btn-link">View Comments</Button>
+        	<!-- View Comments should link to the corresponding post page -->
+        <hr />
+      <% end %>
 		</div>
 		<%= render 'sidebar' %>
 	</div>
