@@ -13,7 +13,7 @@
 			<p><%= image_tag @post.image.url(:thumb) %></p>
 			<% if @post.tags.any? %>
 	  			<% @tags.each do |t| %>
-	 			<button class="btn btn-default btn-sm"><%= t.content %></button>
+                                  <%= link_to t.content, tag_path(t), class: "btn btn-default btn-sm" %>
 	  			<% end %>
 			<% end %>
 			<hr />
