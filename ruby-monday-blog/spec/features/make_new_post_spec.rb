@@ -6,13 +6,13 @@ RSpec.feature "Users can create a new post" do
 
     fill_in "Title", with: "My Title"
     fill_in "Body", with: "My Body"
-    fill_in "Tag", with: "Ruby"
+    fill_in "Tag", with: "My Tag"
 
     click_button "Create Post"
 
     expect(page).to have_content "Post has been created."
     expect(page).to have_content "My Title"
     expect(page).to have_content "My Body"
-    expect(page).to have_content "Ruby"
+    expect(page).to have_content "My Tag"
   end
 end

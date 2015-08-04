@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      flash[:notice] ="Post has been created."
+      flash[:notice] = "Post has been created."
       redirect_to @post
     else
       render 'new'
