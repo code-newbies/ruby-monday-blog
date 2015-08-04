@@ -14,10 +14,17 @@ namespace :db do
       Post.populate 2 do |post|
         post.title = Populator.words(3..7).titleize
         post.body = Populator.sentences(10..20)
-        Tag.populate 2 do |tag|
-          tag.content = ["Ruby on Rails", "Ruby", "JavaScript", "Ruby Gems", "Angular", "Meteor"]
-        end
       end
+    end
+
+    tags_list.each do |topic|
+      Tag.populate 1 do |tag|
+        tag.content = topic
+      end
+    end
+
+    Post.all.each do |entry|
+      PostTag.create(post: entry, tag: Tag.all.sample)
     end
   end
 end
