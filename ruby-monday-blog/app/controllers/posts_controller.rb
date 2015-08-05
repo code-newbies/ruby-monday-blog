@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(prepared_params)
 
     if @post.save
       flash[:notice] = "Post has been created."
@@ -30,4 +30,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:body, :title, :image,
       :tags_attributes => [:id, :content])
   end
+
+  # prepared_params
+  include Titleize
 end

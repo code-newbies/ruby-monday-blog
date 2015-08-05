@@ -6,7 +6,7 @@ RSpec.feature "Users can create a new post" do
 
     fill_in "Title", with: "My Title"
     fill_in "Body", with: "My Body"
-    fill_in "Tag", with: "My Tag"
+    fill_in "Tag", with: "my tag"
 
     click_button "Create Post"
 
