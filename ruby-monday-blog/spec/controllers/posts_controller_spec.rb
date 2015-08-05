@@ -17,7 +17,7 @@ describe PostsController do
   end
 
   it "can reuse a tag that already exists" do
-    # Create the first tag
+    # Create a new tag
     post :create, params
 
     expect { post :create, params }

@@ -13,6 +13,12 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :tags
 
   def autosave_associated_records_for_tags
-    tags.each { |tag| self.tags << Tag.find_or_create_by(content: tag.content) }
+    tags.each { |tag| self.tags << prepare_tag(tag) }
+  end
+
+  private
+
+  def prepare_tag(tag)
+    Tag.find_or_create_by(content: tag.content.titleize)
   end
 end
