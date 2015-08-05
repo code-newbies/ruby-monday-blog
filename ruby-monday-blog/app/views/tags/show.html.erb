@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="col-md-6 col-md-offset-2 show-tag-posts">
-      <% @tag.posts.order(created_at: :desc).each do |post| %>
+      <% @post.each do |post| %>
         <h2><%= post.title %></h2>
         <p><%= post.body %></p>
         <p>Created at: <%= post.created_at %></p>

@@ -20,7 +20,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @post = @tag.posts
+    @post = @tag.posts.order(created_at: :desc)
   end
 
   private
