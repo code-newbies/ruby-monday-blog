@@ -31,4 +31,10 @@ describe PostsController do
     get :new
     expect(response).to redirect_to posts_path
   end
+
+  it 'renders posts#new for a logged in user' do
+    sign_in
+    get :new
+    expect(request.path).to match new_post_path
+  end
 end
