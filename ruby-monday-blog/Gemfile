@@ -65,4 +65,7 @@ group :development, :test do
   # Install Faker and Popullator to seed data to the DB
   gem 'faker', '~> 1.4.3'
   gem 'populator'
+
+  # Use quiet assets in development
+  gem 'quiet_assets'
 end
