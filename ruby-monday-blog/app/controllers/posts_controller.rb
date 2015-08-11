@@ -11,9 +11,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+
     if @post.save
-      flash[:notice] ="Post has been created."
-      redirect_to @post 
+      flash[:notice] = "Post has been created."
+      redirect_to @post
     else
       render 'new'
     end
@@ -27,6 +28,6 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:body, :title, :image,
-                                 :tags_attributes => [:id, :content])
+      :tags_attributes => [:id, :content])
   end
 end

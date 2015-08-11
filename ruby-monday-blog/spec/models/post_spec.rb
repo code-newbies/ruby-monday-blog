@@ -19,8 +19,8 @@ describe Post do
     end
 
     it "has a tag with the post" do
-    @tag = post.tags.build(content:"Rails")
-    expect(@tag.content).to eq("Rails")
+      @tag = post.tags.build(content:"Rails")
+      expect(@tag.content).to eq("Rails")
     end
   end
 end

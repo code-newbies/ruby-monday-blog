@@ -1,18 +1,26 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.feature "Users can create a new post" do
-  scenario "make a new post" do
-    visit new_post_path
+describe PostsController do
+  let(:params) do
+  {
+    post: {
+      body:  'lorem',
+      title: 'ipsum',
+      tags_attributes: {"0" => { content: 'Ruby' }}
+    }
+  }
+  end
 
-    fill_in "Title", with: "My Title"
-    fill_in "Body", with: "My Body"
-    fill_in "Tag", with: "Ruby"
+  it "creates a new tag if it doesn't exist" do
+    expect { post :create, params }
+      .to change{ Tag.count }.by (1)
+  end
 
-    click_button "Create Post"
-    expect(page).to have_content "Post has been created."
-    expect(page).to have_content "My Title"
-    expect(page).to have_content "My Body"
-    expect(page).to have_content "Ruby"
+  it "can reuse a tag that already exists" do
+    # Create a new tag
+    post :create, params
 
+    expect { post :create, params }
+      .to_not change{ Tag.count }
   end
 end
