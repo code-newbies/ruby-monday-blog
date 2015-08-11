@@ -12,6 +12,8 @@ class Post < ActiveRecord::Base
 
   accepts_nested_attributes_for :tags
 
+  scope :ordered_by_created_at, -> { order(created_at: :desc) }
+
   def autosave_associated_records_for_tags
     tags.each { |tag| self.tags << prepare_tag(tag) }
   end

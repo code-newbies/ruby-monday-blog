@@ -1,34 +1,34 @@
 <div class="container">
-	<div class="row">
-		<div class="col-md-6 col-md-offset-2">
-			<h1>Welcome to the Blog</h1>	
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 col-md-offset-2 show-all-posts">
-			<% @posts.each do |post| %>
-			  <h2> <%= post.title %></h2>
-			  <p><%= post.body %></p>
-			  <p>Created at: <%= post.created_at %></p>
-				 
-				&nbsp;
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <h1>Welcome to the Blog</h1>	
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-2 show-all-posts">
+    <% @posts.each do |post| %>
+      <h2> <%= post.title %></h2>
+      <p><%= post.body %></p>
+      <p>Created at: <%= post.created_at %></p>
 
-				      	<% post.tags.each do |tag| %>
-				      		<% unless tag.content.empty? %>
-				      			<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-                                                        <%= link_to tag.content, tag_path(tag), class: "btn btn-default btn-sm" %>
-				        	<% end %>
+      &nbsp;
 
-				        <% end %>
+      <% post.tags.each do |tag| %>
+        <% unless tag.content.empty? %>
+          <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+          <%= link_to tag.content, tag_path(tag), class: "btn btn-default btn-sm" %>
+        <% end %>
 
-				        <br />
-				        <br />
-				        <button type="button" class="btn btn-default btn-md">View Comments</Button>
-				        	<!-- View Comments should link to the corresponding post page -->
-				        <hr />
-				      <% end %>
-			      
-		</div>
-		<%= render 'sidebar' %>
-	</div>
+      <% end %>
+
+      <br />
+      <br />
+      <button type="button" class="btn btn-default btn-md">View Comments</Button>
+      <!-- View Comments should link to the corresponding post page -->
+      <hr />
+    <% end %>
+
+  </div>
+  <%= render 'sidebar' %>
+</div>
 </div>
