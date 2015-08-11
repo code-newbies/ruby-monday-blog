@@ -1,0 +1,20 @@
+<% hide_tags ||= false %>
+<hr />
+<%= div_for post, class: 'post-preview' do %>
+  <%= link_to post do %>
+    <h2><%= post.title %></h2>
+  <% end %>
+  <p class="post-timestamp">Posted <%= time_ago_in_words post.created_at %>&nbsp;ago</p>
+  <p class="post-body"><%= post.body %></p>
+  <ul class="list-inline clearfix">
+    <% post.tags.each do |tag| %>
+      <% unless tag.content.empty? || hide_tags %>
+        <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;
+        <%= link_to tag.content, tag_path(tag), class: "btn btn-default btn-sm" %>
+      <% end %>
+    <% end %>
+    <li class="pull-right">
+      <%= link_to 'View Comments', post_path(post, anchor: 'comments'), class: 'btn btn-link' %>
+    </li>
+  </ul>
+<% end %>
