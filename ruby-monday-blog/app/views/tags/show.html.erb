@@ -5,8 +5,9 @@
         <span class="glyphicon glyphicon-tag small"></span>
         <%= @tag.content %>
       </h1>
+
       <% @posts.each do |post| %>
-        <%= render 'posts/preview', post: post, tags: post.tags.without(@tag) %>
+        <%= render 'posts/preview', post: post %>
       <% end %>
     </div>
   </div>

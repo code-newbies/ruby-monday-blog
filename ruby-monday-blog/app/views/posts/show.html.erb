@@ -12,7 +12,7 @@
 					<%= image_tag @post.image.url(:thumb), class: 'blog-img' %>
 				<% end %>
 
-				<%=  @post.body %>
+				<%= @post.body %>
 			</p>
 			<p>
 			<%= render 'tags/inline', tags: @post.tags %>
