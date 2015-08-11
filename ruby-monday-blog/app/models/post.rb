@@ -12,4 +12,6 @@ class Post < ActiveRecord::Base
 
   accepts_nested_attributes_for :tags
 
+  scope :ordered_by_created_at, -> { order(created_at: :desc) }
+
 end
