@@ -12,7 +12,7 @@ class TagsController < ApplicationController
     @tag = Tag.new(tag_params)
     if @tag.save
       flash[:notice] = "#{@tag.content} has been added."
-    redirect_to @tag
+      redirect_to @tag
     else
       render 'new'
     end
@@ -20,7 +20,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @posts = @tag.posts.ordered_by_created_at
+    @posts = @tag.posts.ordered_by_created_at.includes(:tags)
   end
 
   private

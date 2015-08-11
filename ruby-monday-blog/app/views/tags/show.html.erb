@@ -1,16 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-6 col-md-offset-2 show-tag-posts">
       <h1>
         <span class="glyphicon glyphicon-tag small"></span>
         <%= @tag.content %>
       </h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-2 show-tag-posts">
       <% @posts.each do |post| %>
-        <%= render partial: 'posts/preview', locals: { post: post, hide_tags: true } %>
+        <%= render 'posts/preview', post: post, tags: post.tags.without(@tag) %>
       <% end %>
     </div>
   </div>

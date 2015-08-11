@@ -15,13 +15,7 @@
 				<%=  @post.body %>
 			</p>
 			<p>
-				&nbsp;
-				<% if @post.tags.any? %>
-					<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> &nbsp;
-		  			<% @tags.each do |t| %>
-	                     <%= link_to t.content, tag_path(t), class: "btn btn-default btn-sm" %>
-		  			<% end %>
-				<% end %>
+			<%= render 'tags/inline', tags: @post.tags %>
 			</p>
 			<hr />
 			<div class="row">

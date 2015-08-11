@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-2 show-all-posts">
       <% @posts.each do |post| %>
-        <%= render partial: 'posts/preview', locals: { post: post } %>
+        <%= render 'posts/preview', post: post %>
       <% end %>
     </div>
     <%= render 'sidebar' %>

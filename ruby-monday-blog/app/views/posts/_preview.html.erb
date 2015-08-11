@@ -1,4 +1,3 @@
-<% hide_tags ||= false %>
 <hr />
 <%= div_for post, class: 'post-preview' do %>
   <%= link_to post do %>
@@ -6,17 +5,8 @@
   <% end %>
   <p class="post-timestamp">Posted <%= time_ago_in_words post.created_at %>&nbsp;ago</p>
   <p class="post-body"><%= post.body %></p>
-  <ul class="list-inline clearfix">
-    <% unless hide_tags %>
-      <% post.tags.each do |tag| %>
-        <% unless tag.content.empty? %>
-          <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;
-          <%= link_to tag.content, tag_path(tag), class: "btn btn-default btn-sm" %>
-        <% end %>
-      <% end %>
-    <% end %>
-    <li class="pull-right">
-      <%= link_to 'View Comments', post_path(post, anchor: 'comments'), class: 'btn btn-link' %>
-    </li>
-  </ul>
+  <div class="clearfix">
+    <%= link_to 'View Comments', post_path(post, anchor: 'comments'), class: 'btn btn-link pull-right' %>
+    <%= render 'tags/inline', tags: tags ||= post.tags %>
+  </div>
 <% end %>
