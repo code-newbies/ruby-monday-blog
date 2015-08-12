@@ -24,6 +24,7 @@ $open: 'Open Sans', sans-serif;
 $mobile: 480px;
 $tabet: 768px;
 
+@import "shared/paginator";
 
 h1, h2, h3, h4, h5, h6{
 	font-family: $montserrat;
@@ -67,13 +68,13 @@ body{
   	&:hover{
       color: $ruby;
       background: $white;
-  		transition: all 0.4s; 		
+  		transition: all 0.4s;
   	}
   }
 }
 .navbar{
 	border-radius: 0;
-	border: none;	
+	border: none;
   margin-bottom: 0;
 }
 .landingText{
@@ -91,7 +92,7 @@ body{
   }
 }
 #landingImage{
-  background: linear-gradient(rgba(0, 0, 0, 0.1), 
+  background: linear-gradient(rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.1)), image-url('ruby1.jpg') no-repeat 0 200px;
   background-position: center center;
   background-size: cover;
@@ -112,7 +113,7 @@ body{
   -ms-filter: grayscale(100%);
   -o-filter: grayscale(100%);
   filter: grayscale(100%);
-  
+
 }
 
 .create-post{
@@ -126,7 +127,7 @@ body{
 
 .sidebar.well{
   background-color: $gray;
-  
+
 }
 
 .blog-img {

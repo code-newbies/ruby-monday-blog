@@ -1,0 +1,19 @@
+// delete when sprockets/pipeline is properly scoped to support shared variables
+$white: #fff;
+$ruby: #bc0d00;
+$gray: #dedede;
+
+.pagination {
+  li {
+    a, a:hover {
+      color: $ruby;
+    }
+
+    &.active a,
+    &.active a:hover {
+      background: $ruby;
+      border-color: $ruby;
+      color: $white;
+    }
+  }
+}
