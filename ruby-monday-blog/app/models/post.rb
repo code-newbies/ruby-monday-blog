@@ -14,6 +14,8 @@ class Post < ActiveRecord::Base
 
   scope :ordered_by_created_at, -> { order(created_at: :desc) }
 
+  paginates_per 10
+
   def autosave_associated_records_for_tags
     tags.each { |tag| self.tags << prepare_tag(tag) }
   end

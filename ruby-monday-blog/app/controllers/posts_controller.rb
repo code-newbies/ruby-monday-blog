@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.ordered_by_created_at
+    @posts = Post.ordered_by_created_at.includes(:tags).page params[:page]
   end
 
   def new

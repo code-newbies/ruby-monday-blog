@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="col-md-6 col-md-offset-2 show-tag-posts">
-      <% @post.each do |post| %>
+      <% @posts.each do |post| %>
         <h2><%= post.title %></h2>
         <p><%= post.body %></p>
         <p>Created at: <%= post.created_at %></p>
@@ -19,6 +19,9 @@
       <!-- View Comments should link to the corresponding post page -->
       <hr />
       <% end %>
+      <div class="text-center">
+        <%= paginate @posts %>
+      </div>
     </div>
   </div>
 </div>
