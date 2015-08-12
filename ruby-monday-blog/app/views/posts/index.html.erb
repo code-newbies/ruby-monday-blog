@@ -8,7 +8,6 @@
     <div class="col-md-6 col-md-offset-2 show-all-posts">
       <% @posts.each do |post| %>
         <%= render 'posts/preview', post: post %>
-        <%= render 'tags/inline', tags: post.tags %>
       <% end %>
     </div>
     <%= render 'sidebar' %>
