@@ -9,6 +9,6 @@
 
   <div class="clearfix">
     <%= link_to 'View Comments', post_path(post, anchor: 'comments'), class: 'btn btn-link pull-right' %>
-    <%= render 'tags/inline', tags: post.tags, excludes: @tag %>
+    <%= render 'tags/inline', tags: tags %>
   </div>
 <% end %>

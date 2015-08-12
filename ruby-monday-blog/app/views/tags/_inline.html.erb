@@ -1,6 +1,5 @@
-<% tags -= [excludes ||= nil] %>
 <ul class="tags-inline list-inline">
-  <% if tags.any? %>
+  <% if tags.present? %>
     <li class="glyphicon glyphicon-tags" aria-hidden="true"></li>
     <% tags.each do |tag| %>
       <li><%= link_to tag.content, tag, class: "btn btn-default btn-sm" %></li>
