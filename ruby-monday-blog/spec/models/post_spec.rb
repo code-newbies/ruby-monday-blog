@@ -7,6 +7,10 @@ describe Post do
     it {should have_many(:tags)}
   end
 
+  describe "associations" do
+    it { is_expected.to belong_to :author }
+  end
+
   describe "initial setup" do
     let(:post) {Post.create(title:"My Post", body:"My Content")}
 
