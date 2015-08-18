@@ -22,6 +22,10 @@ class Post < ActiveRecord::Base
     tags.each { |tag| self.tags << prepare_tag(tag) }
   end
 
+  def author_full_name
+    "#{author.first_name} #{author.last_name}"
+  end
+
   private
 
   def prepare_tag(tag)
