@@ -5,11 +5,7 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   has_many :post_tags, inverse_of: :post
-  has_many :tags, through: :post_tags do
-    def without(tag)
-      where('tag_id NOT IN (?)', tag.id)
-    end
-  end
+  has_many :tags, through: :post_tags
 
   validates :body, presence: true
   validates :title, presence: true
