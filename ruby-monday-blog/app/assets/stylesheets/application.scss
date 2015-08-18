@@ -10,21 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-$white: #fff;
-$ruby: #bc0d00;
-$gray: #dedede;
-$montserrat: 'Montserrat', sans-serif;
-$lato: 'Lato', sans-serif;
-$open: 'Open Sans', sans-serif;
-$mobile: 480px;
-$tabet: 768px;
-
 @import "shared/paginator";
+@import "shared/variables";
+@import "shared/mixins";
+@import "posts";
+@import "tags";
+@import "users";
 
 h1, h2, h3, h4, h5, h6{
 	font-family: $montserrat;
@@ -127,7 +122,6 @@ body{
 
 .sidebar.well{
   background-color: $gray;
-
 }
 
 .blog-img {

@@ -118,6 +118,8 @@ GEM
       mimemagic (= 0.3.0)
     pg (0.18.2)
     populator (1.0.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -217,7 +219,6 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara (~> 2.4.4)
-  coffee-rails (~> 4.1.0)
   devise
   faker (~> 1.4.3)
   google-webfonts-rails
@@ -227,6 +228,7 @@ DEPENDENCIES
   paperclip (~> 4.3)
   pg
   populator
+  quiet_assets
   rails (= 4.2.0)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)

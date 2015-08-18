@@ -5,14 +5,14 @@ class TagsController < ApplicationController
   end
 
   def new
-  @tag = Tag.new
+    @tag = Tag.new
   end
 
   def create
     @tag = Tag.new(tag_params)
     if @tag.save
       flash[:notice] = "#{@tag.content} has been added."
-    redirect_to @tag
+      redirect_to @tag
     else
       render 'new'
     end
@@ -24,6 +24,7 @@ class TagsController < ApplicationController
   end
 
   private
+
   def tag_params
     params.require(:tag).permit(:content)
   end

@@ -1,34 +1,16 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 col-md-offset-2">
-			<h1>SHOW POST</h1>
-		</div>
-	</div>
-	<div class="row">
 		<div class="col-md-6 col-md-offset-2 show-post">
 			<h2><%= @post.title %></h2>
 			<p>
-				<% if @post.image %>
-					<%= image_tag @post.image.url(:thumb), class: 'blog-img' %>
-				<% end %>
-
-				<%=  @post.body %>
+				<%= image_tag(@post.image.url(:thumb), class: 'blog-img img-responsive') if @post.image %>
+				<%= @post.body %>
 			</p>
-			<p>
-				&nbsp;
-				<% if @post.tags.any? %>
-					<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> &nbsp;
-		  			<% @tags.each do |t| %>
-	                     <%= link_to t.content, tag_path(t), class: "btn btn-default btn-sm" %>
-		  			<% end %>
-				<% end %>
-			</p>
+			<%= render 'tags/inline', tags: @post.tags %>
 			<hr />
-			<div class="row">
-				<div class="col-md-12 comments">
-					<h2>COMMENTS</h2>
-					<p>Coming Soon</p>
-				</div>
+			<div class="comments" id="comments">
+				<h3>COMMENTS</h3>
+				<p>Coming Soon</p>
 			</div>
 		</div>
 		<%= render 'sidebar' %>
