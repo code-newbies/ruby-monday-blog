@@ -1,23 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-2">
-      <h1><%= @tag.content %></h1>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-md-6 col-md-offset-2 show-tag-posts">
-      <% @post.each do |post| %>
-        <h2><%= post.title %></h2>
-        <p><%= post.body %></p>
-        <p>Created at: <%= post.created_at %></p>
-        &nbsp;
-        <% post.tags.each do |tag| %>
-          <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-          <button class="btn btn-default btn-sm"><%= tag.content %></button>
-        <% end %>
-      <button type="button" class="btn btn-link">View Comments</Button>
-      <!-- View Comments should link to the corresponding post page -->
-      <hr />
+      <h1>
+        <span class="glyphicon glyphicon-tag small"></span>
+        <%= @tag.content %>
+      </h1>
+
+      <% @posts.each do |post| %>
+        <%= render 'posts/preview', post: post, tags: post.tags %>
       <% end %>
     </div>
   </div>

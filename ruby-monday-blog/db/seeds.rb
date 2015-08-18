@@ -24,8 +24,9 @@ namespace :db do
     end
 
     Post.all.each do |entry|
-      PostTag.create(post: entry, tag: Tag.all.sample)
+      Tag.all.sample(rand(1..tags_list.length)).each do |tag|
+        PostTag.create(post: entry, tag: tag)
+      end
     end
   end
 end
-
