@@ -11,6 +11,7 @@
       <div class="text-center">
         <%= paginate @posts %>
       </div>
+      <%= render 'posts/empty' if @posts.empty? %>
     </div>
   </div>
 </div>

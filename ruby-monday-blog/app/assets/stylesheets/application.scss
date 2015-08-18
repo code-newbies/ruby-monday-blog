@@ -22,11 +22,11 @@
 @import "users";
 
 h1, h2, h3, h4, h5, h6{
-	font-family: $montserrat;
+  font-family: $montserrat;
 }
 
 body{
-	font-family: $open;
+  font-family: $open;
 }
 .alert-success{
   background: $ruby;
@@ -44,7 +44,7 @@ body{
   background-color: $ruby;
   border: none;
   .navbar-brand{
-  	color: $ruby;
+    color: $ruby;
     font-family: $montserrat;
     background: $white;
     &:hover{
@@ -59,18 +59,22 @@ body{
       background-color: $white;
     }
   .navbar-nav > li > a{
-  	color: $white;
-  	&:hover{
+    color: $white;
+    &:hover{
       color: $ruby;
       background: $white;
-  		transition: all 0.4s;
-  	}
+      transition: all 0.4s;
+    }
   }
 }
 .navbar{
-	border-radius: 0;
-	border: none;
+  border-radius: 0;
+  border: none;
   margin-bottom: 0;
+  .badge {
+    background: $white;
+    color: $ruby;
+  }
 }
 .landingText{
   position: relative;
