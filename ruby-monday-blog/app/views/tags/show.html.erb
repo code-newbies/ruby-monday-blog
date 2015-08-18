@@ -7,7 +7,7 @@
       </h1>
 
       <% @posts.each do |post| %>
-        <%= render 'posts/preview', post: post, tags: [] %>
+        <%= render 'posts/preview', post: post, tags: post.tags %>
       <% end %>
     </div>
   </div>
