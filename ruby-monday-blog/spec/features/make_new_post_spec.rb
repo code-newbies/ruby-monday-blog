@@ -17,5 +17,6 @@ RSpec.feature "Users can create a new post" do
     expect(page).to have_content "My Title"
     expect(page).to have_content "My Body"
     expect(page).to have_content "My Tag"
+    expect(page).to have_content Post.last.author_full_name
   end
 end
