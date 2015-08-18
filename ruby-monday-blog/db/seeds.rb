@@ -11,9 +11,12 @@ namespace :db do
       user.email    = Faker::Internet.email
       user.encrypted_password = Faker::Internet.password(8)
       user.sign_in_count = 10..100
+      user.first_name = Faker::Name.first_name
+      user.last_name  = Faker::Name.last_name
       Post.populate 2 do |post|
         post.title = Populator.words(3..7).titleize
         post.body = Populator.sentences(10..20)
+        post.author_id = user.id
       end
     end
 
