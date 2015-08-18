@@ -4,7 +4,16 @@
     <h2><%= post.title %></h2>
   <% end %>
 
-  <p class="post-timestamp">Posted <%= time_ago_in_words post.created_at %>&nbsp;ago</p>
+  <p class="post-timestamp">
+    <span class="post-info-time">
+      <span class="glyphicon glyphicon-time"></span>
+      Posted <%= time_ago_in_words post.created_at %>&nbsp;ago
+    </span>
+    <span class="post-info-user">
+      <span class="glyphicon glyphicon-user"></span>
+      <%= post.author_full_name %>
+    </span>
+  </p>
   <p class="post-body"><%= post.body %></p>
 
   <div class="clearfix">
