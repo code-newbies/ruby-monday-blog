@@ -8,7 +8,7 @@ describe Post do
   end
 
   describe "associations" do
-    it { is_expected.to belong_to :author }
+    it {should belong_to :author}
   end
 
   describe "initial setup" do
