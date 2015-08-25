@@ -6,10 +6,25 @@ class PostsController < ApplicationController
     @posts = Post.ordered_by_created_at.includes(:tags).page params[:page]
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @tags = @post.tags
+    authorize @post
+  end
+
   def new
     @post = Post.new
     authorize @post
     @tag = @post.tags.build
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+    authorize @post
+    fail NotImplementedError
+  rescue NotImplementedError
+    flash[:alert] = "We're still working on this feature!"
+    redirect_to request.referrer || @post
   end
 
   def create
@@ -24,10 +39,20 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
+  def update
+    fail NotImplementedError
+  end
+
+  def destroy
     @post = Post.find(params[:id])
-    @tags = @post.tags
     authorize @post
+    if @post.destroy
+      flash[:notice] = "Post has been deleted."
+      redirect_to posts_path
+    else
+      flash[:alert] = "We couldn't process your request."
+      redirect_to request.referrer || @post
+    end
   end
 
   protected
