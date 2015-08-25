@@ -27,6 +27,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Build a user authentication with Devise
 gem 'devise'
+
+# Use Pundit for user-resource authorization
+gem 'pundit', '~> 1.0'
+
 # Adding CSS animation
 gem 'animate-rails'
 # Google Fonts
