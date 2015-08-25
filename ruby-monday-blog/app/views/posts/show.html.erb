@@ -17,12 +17,11 @@
         <%= @post.body %>
       </p>
       <%= render 'tags/inline', tags: @post.tags %>
-      <hr />
-        <ul class="list-inline">
-          <li><%= link_to('Edit', edit_post_path(@post)) if policy(@post).edit? %></li>
-          <li><%= link_to('Delete', post_path(@post),
-                  method: :delete, data: { confirm: 'Are you sure?' }) if policy(@post).destroy? %></li>
-        </ul>
+      <ul class="list-inline">
+        <li><%= link_to('Edit', edit_post_path(@post)) if policy(@post).edit? %></li>
+        <li><%= link_to('Delete', post_path(@post),
+                method: :delete, data: { confirm: 'Are you sure?' }) if policy(@post).destroy? %></li>
+      </ul>
       <hr />
       <div class="comments" id="comments">
         <h3>COMMENTS</h3>

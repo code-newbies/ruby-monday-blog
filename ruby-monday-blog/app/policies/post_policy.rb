@@ -15,14 +15,14 @@ class PostPolicy < ApplicationPolicy
   end
 
   def create?
-    user.author? || user.admin?
+    user.present? && (user.author? || user.admin?)
   end
 
   def update?
-    record.author == user || user.admin?
+    user.present? && (record.author == user || user.admin?)
   end
 
   def destroy?
-    record.author == user || user.admin?
+    user.present? && (record.author == user || user.admin?)
   end
 end

@@ -21,10 +21,6 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     authorize @post
-    fail NotImplementedError
-  rescue NotImplementedError
-    flash[:alert] = "We're still working on this feature!"
-    redirect_to request.referrer || @post
   end
 
   def create
@@ -40,7 +36,15 @@ class PostsController < ApplicationController
   end
 
   def update
-    fail NotImplementedError
+    @post = Post.find(params[:id])
+    authorize @post
+
+    if @post.update_attributes(post_params)
+      flash[:notice] = "Post has been updated."
+      redirect_to @post
+    else
+      render 'edit'
+    end
   end
 
   def destroy

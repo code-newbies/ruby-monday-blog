@@ -1,0 +1,32 @@
+<%= form_for(post) do |f| %>
+  <% if post.errors.any? %>
+    <div class="error-explanation">
+      <ul class="error-messages list-unstyled">
+        <% post.errors.full_messages.each do |error_message| %>
+          <li class="text-warning"><%= error_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <h3><%= f.label :title %></h3>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <h3><%= f.label :body %></h3>
+    <%= f.text_area :body, class: "form-control", rows: 15 %>
+  </div>
+  <div class="form-group">
+    <h3><%= f.label :image, "Upload Image" %></h3>
+    <%= f.file_field :image %>
+  </div>
+  <div class="form-group">
+    <%= f.fields_for :tags do |t| %>
+      <h3><%= t.label :content, "Tag" %></h3>
+      <%= t.text_field :content, class: "form-control" %>
+    <% end %>
+  </div>
+  <div class="form-group text-right">
+    <%= f.submit submit_label, class: "btn btn-default btn-lg" %>
+  </div>
+<% end %>
