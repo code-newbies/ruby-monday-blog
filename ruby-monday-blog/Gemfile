@@ -43,6 +43,9 @@ gem 'paperclip', '~> 4.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Kaminari for pagination
+gem 'kaminari', '~> 0.16'
+
 group :development, :test do
   # Install rspec for testing
   gem 'rspec-rails', '~> 3.0'
