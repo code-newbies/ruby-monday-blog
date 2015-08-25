@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: tags
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  content    :string
+#
+
 require 'rails_helper'
 
 describe Tag do
