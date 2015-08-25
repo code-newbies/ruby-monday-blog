@@ -21,10 +21,30 @@
 #
 
 FactoryGirl.define do
+  sequence :email do |n|
+    "#{n}@example.com"
+  end
+
   factory :user do
-    email '0@example.com'
+    email
     password 'password'
     first_name Faker::Name.first_name
     last_name Faker::Name.last_name
+
+    trait :author do
+      role :author
+    end
+
+    trait :reader do
+      role :reader
+    end
+
+    trait :admin do
+      role :admin
+    end
+
+    factory :author, traits: [:author]
+    factory :reader, traits: [:reader]
+    factory :admin,  traits: [:admin]
   end
 end
