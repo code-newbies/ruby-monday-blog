@@ -20,33 +20,38 @@
 @import "tags";
 @import "users";
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
 	font-family: $montserrat;
 }
 
-body{
+body {
 	font-family: $open;
+  margin-top: 50px;
 }
-.alert-success{
+
+.alert-success {
   background: $ruby;
   color: $white;
 }
-.alert-danger{
+
+.alert-danger {
   background: $ruby;
   color: $white;
 }
-.alert-warning{
+
+.alert-warning {
   background: $ruby;
   color: $white;
 }
+
 .navbar-default {
   background-color: $ruby;
   border: none;
-  .navbar-brand{
+  .navbar-brand {
   	color: $ruby;
     font-family: $montserrat;
     background: $white;
-    &:hover{
+    &:hover {
       color: $white;
       transition: all 0.4s;
     }
@@ -57,35 +62,38 @@ body{
     .navbar-toggle .icon-bar {
       background-color: $white;
     }
-  .navbar-nav > li > a{
+  .navbar-nav > li > a {
   	color: $white;
-  	&:hover{
+  	&:hover {
       color: $ruby;
       background: $white;
   		transition: all 0.4s;
   	}
   }
 }
-.navbar{
+
+.navbar {
 	border-radius: 0;
 	border: none;
   margin-bottom: 0;
 }
-.landingText{
+
+.landingText {
   position: relative;
   margin: 25vh auto;
   color: $white;
-  h1{
+  h1 {
     font-size: 4em;
   }
   @media screen and (max-width: $mobile) {
     margin: 25vh auto;
-    h1{
+    h1 {
       font-size: 2.2em;
     }
   }
 }
-#landingImage{
+
+#landingImage {
   background: linear-gradient(rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.1)), image-url('ruby1.jpg') no-repeat 0 200px;
   background-position: center center;
@@ -97,7 +105,8 @@ body{
   -o-filter: grayscale(100%);
   filter: grayscale(100%);
 }
-#aboutImage{
+
+#aboutImage {
   background: image-url('ruby2.jpg') no-repeat 0 100px;
   background-position: center center;
   background-size: cover;
@@ -107,24 +116,23 @@ body{
   -ms-filter: grayscale(100%);
   -o-filter: grayscale(100%);
   filter: grayscale(100%);
-
 }
 
-.create-post{
+.create-post {
   background-color: $gray;
   padding: 20px 40px;
 }
 
-.add-whitespace{
-  margin: 40px 0px;
+.add-whitespace {
+  margin: 40px 0;
 }
 
-.sidebar.well{
+.sidebar.well {
   background-color: $gray;
 }
 
 .blog-img {
   float: left;
-  margin-right: 5px;
   margin-bottom: 5px;
+  margin-right: 5px;
 }
