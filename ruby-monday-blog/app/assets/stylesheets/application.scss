@@ -14,6 +14,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "shared/paginator";
 @import "shared/variables";
 @import "shared/mixins";
 @import "posts";
@@ -47,6 +48,7 @@ body {
 .navbar-default {
   background-color: $ruby;
   border: none;
+
   .navbar-brand {
   	color: $ruby;
     font-family: $montserrat;
@@ -62,13 +64,14 @@ body {
     .navbar-toggle .icon-bar {
       background-color: $white;
     }
+
   .navbar-nav > li > a {
   	color: $white;
   	&:hover {
       color: $ruby;
       background: $white;
-  		transition: all 0.4s;
-  	}
+      transition: all 0.4s;
+    }
   }
 }
 
@@ -76,6 +79,10 @@ body {
 	border-radius: 0;
 	border: none;
   margin-bottom: 0;
+  .badge {
+    background: $white;
+    color: $ruby;
+  }
 }
 
 .landingText {

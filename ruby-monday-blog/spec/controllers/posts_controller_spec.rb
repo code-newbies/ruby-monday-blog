@@ -16,7 +16,7 @@ describe PostsController do
       .to change{ Tag.count }.by (1)
   end
 
-  it "can reuse a tag that already exists" do
+  it "doesn't create a new tag if one with the same name already exists" do
     # Create a new tag
     post :create, params
 
