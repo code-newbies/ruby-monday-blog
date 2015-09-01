@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.feature "Users can create a new post" do
-  let!(:user) { create(:user) }
+RSpec.feature "Authors can create a new post" do
+  let!(:author) { create(:author) }
 
   scenario "make a new post" do
-    login_as(user, scope: :user)
+    login_as(author, scope: :user)
     visit new_post_path
 
     fill_in "Title", with: "My Title"

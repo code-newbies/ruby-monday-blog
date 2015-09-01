@@ -22,7 +22,9 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li class="text-uppercase"><%= link_to "New Posts", posts_path %></li>
-          <li class="text-uppercase"><%= link_to "Create New Post", new_post_path %></li>
+          <% if policy(Post).new? %>
+            <li class="text-uppercase"><%= link_to "Create New Post", new_post_path %></li>
+          <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT <span class="caret"></span></a>
             <ul class="dropdown-menu gemma-menu" role="menu">

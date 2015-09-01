@@ -5,7 +5,7 @@ RSpec.feature "member can navigate to post from post index", type: :feature do
   let!(:post) { Post.create(title: 'My Post', body: 'My Content', author: user) }
 
   scenario "user visits post index and clicks on a post headline" do
-    # log_in_as user
+    login_as(user, scope: :user)
 
     # Post#index
     visit posts_path

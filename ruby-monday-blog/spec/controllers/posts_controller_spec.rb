@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe PostsController do
-  let!(:user) { create(:user) }
+  let!(:author) { create(:author) }
 
   let(:params) do
   {
@@ -14,14 +14,14 @@ describe PostsController do
   end
 
   it "creates a new tag if it doesn't exist" do
-    sign_in user
+    sign_in author
 
     expect { post :create, params }
       .to change{ Tag.count }.by (1)
   end
 
   it "can reuse a tag that already exists" do
-    sign_in user
+    sign_in author
 
     # Create a new tag
     post :create, params
@@ -31,11 +31,11 @@ describe PostsController do
   end
 
   it "assigns current user as post's author" do
-    sign_in user
+    sign_in author
 
     post :create, params
 
-    expect(Post.last.author).to eq user
+    expect(Post.last.author).to eq author
   end
 
   it 'redirects the user from posts#new to posts#index if not logged in' do
@@ -44,7 +44,7 @@ describe PostsController do
   end
 
   it 'renders posts#new for a logged in user' do
-    sign_in user
+    sign_in author
     get :new
     expect(request.path).to match new_post_path
   end
