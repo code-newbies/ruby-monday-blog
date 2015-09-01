@@ -1,18 +1,18 @@
 <div class='flashes'>
   <% if flash[:notice] %>
-     <div class="alert alert-success">
-       <button type="button" class="close" data-dismiss="alert">&times;</button>
-       <div class="text-uppercase"><%= flash[:notice] %></div>
-     </div>
-   <% if flash[:error] %>
-     <div class="alert alert-danger">
-       <button type="button" class="close" data-dismiss="alert">&times;</button>
-       <div class="text-uppercase"><%= flash[:error] %></div>
-     </div>
-   <% if flash[:alert] %>
-     <div class="alert alert-warning">
-       <button type="button" class="close" data-dismiss="alert">&times;</button>
-       <div class="text-uppercase"><%= flash[:alert] %></div>
-     </div>
-   <% end %>
- </div>
+    <div class="alert alert-success">
+      <button class="close" data-dismiss="alert" type="button">&times;</button>
+      <div class="text-uppercase"><%= flash[:notice] %></div>
+    </div>
+  <% elsif flash[:error] %>
+    <div class="alert alert-danger">
+      <button class="close" data-dismiss="alert" type="button">&times;</button>
+      <div class="text-uppercase"><%= flash[:error] %></div>
+    </div>
+  <% elsif flash[:alert] %>
+    <div class="alert alert-warning">
+      <button class="close" data-dismiss="alert" type="button">&times;</button>
+      <div class="text-uppercase"><%= flash[:alert] %></div>
+    </div>
+  <% end %>
+</div>
