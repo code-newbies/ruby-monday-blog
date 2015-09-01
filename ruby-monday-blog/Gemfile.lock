@@ -36,7 +36,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.8)
     animate-rails (1.0.8)
       rails
     annotate (2.6.10)
@@ -109,8 +108,6 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    launchy (2.4.3)
-      addressable (~> 2.3)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -120,7 +117,6 @@ GEM
     mimemagic (0.3.0)
     mini_portile (0.6.2)
     minitest (5.7.0)
-    mixlib-cli (1.5.0)
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -191,10 +187,6 @@ GEM
       rspec-mocks (~> 3.3.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
-    sandi_meter (1.2.0)
-      json
-      launchy
-      mixlib-cli
     sass (3.4.16)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -264,7 +256,6 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.0)
   rspec-rails (~> 3.0)
-  sandi_meter
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda
