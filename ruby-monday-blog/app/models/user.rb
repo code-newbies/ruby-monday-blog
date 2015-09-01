@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+  validates :first_name, :last_name, presence: true, if: :author?
   # Define enum for roles  ref: http://railsapps.github.io/rails-authorization.html
   # This allows roles to be stored in the db as an int index, but allows us to use sensible, familiar strings for names.
   enum role: [:reader, :author, :admin]
