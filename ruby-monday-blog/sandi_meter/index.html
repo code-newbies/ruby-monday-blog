@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sandi Chart</title>
+  <link rel="stylesheet" href="assets/normalize.css">
+  <link rel="stylesheet" href="assets/morris.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/jquery.js"></script>
+  <script src="assets/chart.js"></script>
+  <script src="assets/script.js"></script>
+  <script type="text/javascript">
+    var data = [{"r10":10,"r11":0,"r20":9,"r21":2,"r30":18,"r31":0,"r40":3,"r41":2,"timestamp":1439516584000},{"r10":9,"r11":0,"r20":6,"r21":1,"r30":10,"r31":0,"r40":3,"r41":1,"timestamp":1439517647000},{"r10":15,"r11":0,"r20":28,"r21":5,"r30":64,"r31":2,"r40":4,"r41":2,"timestamp":1441132959000}];
+  </script>
+</head>
+<body>
+  <a href="https://github.com/makaroni4/sandi_meter"><img style="position: absolute; top: 0; left: 0; border: 0;" src="assets/forkme.png" alt="Fork me on GitHub"></a>
+  <div class="container">
+    <header>
+      <h1 class="main-title">Sandi Metz rules</h1>
+      <h2 class="main-description js-report-date"></h2>
+    </header>
+    <section class="pie-charts">
+      <div id="pie1" class="pie-charts-item"></div>
+      <div id="pie2" class="pie-charts-item"></div>
+      <div id="pie3" class="pie-charts-item"></div>
+      <div id="pie4" class="pie-charts-item"></div>
+      <div class="clearfix"></div>
+    </section>
+    <nav class="main-menu">
+      <a href="#" class="main-menu-active js-menu-item" data-rel=".js-charts">Rules</a>
+      <a href="#" class="js-menu-item" data-rel=".js-charts-percentage">Rules %</a>
+      <a href="#" class="js-menu-item" data-rel=".js-progress">Progress %</a>
+      <a href="#" class="js-menu-item" data-rel=".js-details">Details</a>
+    </nav>
+    <section class="plot-charts js-charts js-tab-item">
+      <div class="plot-charts-item">
+        <div class="plot-charts-item-caption">Number of 100 line classes vs time</div>
+        <div class="plot-charts-item-graph plot1"></div>
+      </div>
+      <div class="plot-charts-item">
+        <div class="plot-charts-item-caption">Number of 5 line methods vs time</div>
+        <div class="plot-charts-item-graph plot2"></div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="plot-charts-item">
+        <div class="plot-charts-item-caption">Number of methods calls with 4 params vs time</div>
+        <div class="plot-charts-item-graph plot3"></div>
+      </div>
+      <div class="plot-charts-item">
+        <div class="plot-charts-item-caption">Number of controllers with 1 instance variable vs time</div>
+        <div class="plot-charts-item-graph plot4"></div>
+      </div>
+      <div class="clearfix"></div>
+    </section>
+    <section class="details js-details js-tab-item">
+      <h2>Methods with 5+ lines</h2>
+<table class="details-stats">
+  <thead>
+    <tr>
+<th class="" title="">Class name</th>
+<th class="" title="">Method name</th>
+<th class="" title="">Size</th>
+<th class="" title="">Path</th>
+</tr>
+
+  </thead>
+  <tbody>
+    <tr>
+<td class="" title="">PostsController</td>
+<td class="" title="">create</td>
+<td class="" title="">9</td>
+<td class="" title="">./app/controllers/posts_controller.rb</td>
+</tr>
+<tr>
+<td class="" title="">PostsController</td>
+<td class="" title="">update</td>
+<td class="" title="">9</td>
+<td class="" title="">./app/controllers/posts_controller.rb</td>
+</tr>
+<tr>
+<td class="" title="">PostsController</td>
+<td class="" title="">destroy</td>
+<td class="" title="">9</td>
+<td class="" title="">./app/controllers/posts_controller.rb</td>
+</tr>
+<tr>
+<td class="" title="">TagsController</td>
+<td class="" title="">create</td>
+<td class="" title="">7</td>
+<td class="" title="">./app/controllers/tags_controller.rb</td>
+</tr>
+<tr>
+<td class="" title="">DeviseHelper</td>
+<td class="" title="">sign_in</td>
+<td class="" title="">7</td>
+<td class="" title="">./spec/support/devise_helper.rb</td>
+</tr>
+
+  </tbody>
+</table>
+<div class="hint">NOTE: Red methods are misindented. Continue your way to perfect code by fixing them.</div><h2>Method calls with 4+ arguments</h2>
+<table class="details-stats">
+  <thead>
+    <tr>
+<th class="" title=""># of arguments</th>
+<th class="" title="">Path</th>
+</tr>
+
+  </thead>
+  <tbody>
+    <tr>
+<td class="" title="">5</td>
+<td class="" title="">./app/controllers/users/registrations_controller.rb</td>
+</tr>
+<tr>
+<td class="" title="">6</td>
+<td class="" title="">./app/controllers/users/registrations_controller.rb</td>
+</tr>
+
+  </tbody>
+</table>
+<h2>Controllers with 1+ instance variables</h2>
+<table class="details-stats">
+  <thead>
+    <tr>
+<th class="" title="">Controller name</th>
+<th class="" title="">Action name</th>
+<th class="" title="">Instance variables</th>
+</tr>
+
+  </thead>
+  <tbody>
+    <tr>
+<td class="" title="">PostsController</td>
+<td class="" title="">new</td>
+<td class="" title="">@post, @tag</td>
+</tr>
+<tr>
+<td class="" title="">TagsController</td>
+<td class="" title="">show</td>
+<td class="" title="">@tag, @posts</td>
+</tr>
+
+  </tbody>
+</table>
+
+    </section>
+    <section class="charts-percentage js-charts-percentage js-tab-item">
+    </section>
+    <section class="progress js-progress js-tab-item">
+      <div class="plot-charts-item">
+        <div class="plot-charts-item-caption">Overall progress</div>
+        <div class="plot-charts-item-graph plot"></div>
+        <div class="clearfix"></div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      Scanned with love by <a href="https://github.com/makaroni4/sandi_meter">sandi_meter</a> gem.
+      Please, <a href="https://github.com/makaroni4/sandi_meter/issues/new">leave an issue</a> or
+      <a href="mailto:makaroni4@gmail.com">email</a> some feedback!
+    </footer>
+  </div>
+</body>
+</html>
