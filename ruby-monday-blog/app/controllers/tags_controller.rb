@@ -20,7 +20,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @posts = @tag.posts.ordered_by_created_at.includes(:tags)
+    @posts = @tag.posts.ordered_by_created_at.includes(:tags).page params[:page]
   end
 
   private

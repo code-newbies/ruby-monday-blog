@@ -2,6 +2,16 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-2 show-post">
 			<h2><%= @post.title %></h2>
+			<p class="post-timestamp">
+		    <span class="post-info-time">
+			    <span class="glyphicon glyphicon-time"></span>
+			    Posted <%= time_ago_in_words @post.created_at %>&nbsp;ago
+			  </span>
+			  <span class="post-info-user">
+			    <span class="glyphicon glyphicon-user"></span>
+			    <%= @post.author_full_name %>
+			  </span>
+		  </p>
 			<p>
 				<%= image_tag(@post.image.url(:thumb), class: 'blog-img img-responsive') if @post.image %>
 				<%= @post.body %>

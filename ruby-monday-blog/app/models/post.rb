@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   has_many :post_tags, inverse_of: :post
   has_many :tags, through: :post_tags
 
+  belongs_to :author, class_name: 'User'
+
   validates :body, presence: true
   validates :title, presence: true
 
@@ -14,8 +16,14 @@ class Post < ActiveRecord::Base
 
   scope :ordered_by_created_at, -> { order(created_at: :desc) }
 
+  paginates_per 10
+
   def autosave_associated_records_for_tags
     tags.each { |tag| self.tags << prepare_tag(tag) }
+  end
+
+  def author_full_name
+    "#{author.first_name} #{author.last_name}"
   end
 
   private

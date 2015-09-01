@@ -6,9 +6,16 @@
   .post-timestamp {
     color: $gray;
   }
+  .post-title, .post-title:hover {
+    color: $ruby;
+  }
   .post-body {
     line-height: 1.5em;
     @include line-fade(1.5em, 5);
     overflow: hidden;
   }
+}
+
+span.post-info-time, span.post-info-user {
+	margin-right: 10px;
 }

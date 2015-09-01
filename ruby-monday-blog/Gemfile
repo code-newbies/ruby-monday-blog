@@ -43,6 +43,9 @@ gem 'paperclip', '~> 4.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Kaminari for pagination
+gem 'kaminari', '~> 0.16'
+
 group :development, :test do
   # Install rspec for testing
   gem 'rspec-rails', '~> 3.0'
@@ -62,10 +65,14 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
+  # Factory Girl
+  gem 'factory_girl_rails'
+
   # Install Faker and Popullator to seed data to the DB
   gem 'faker', '~> 1.4.3'
   gem 'populator'
 
   # Use quiet assets in development
   gem 'quiet_assets'
+
 end

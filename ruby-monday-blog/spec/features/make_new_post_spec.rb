@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature "Users can create a new post" do
+  let!(:user) { create(:user) }
+
   scenario "make a new post" do
+    login_as(user, scope: :user)
     visit new_post_path
 
     fill_in "Title", with: "My Title"
@@ -14,5 +17,6 @@ RSpec.feature "Users can create a new post" do
     expect(page).to have_content "My Title"
     expect(page).to have_content "My Body"
     expect(page).to have_content "My Tag"
+    expect(page).to have_content Post.last.author_full_name
   end
 end
