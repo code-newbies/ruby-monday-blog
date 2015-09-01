@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	  <title>Ruby-Monday Blog</title>
-	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	  <%= csrf_meta_tags %>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ruby-Monday Blog</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.png' %>
     <%= google_webfonts_init({
-	    google: ['Lato', 'Open Sans', 'Montserrat']
-	  }) %>
+      google: ['Lato', 'Open Sans', 'Montserrat']
+    }) %>
 	</head>
 	<body>
 		<%= render 'layouts/nav' %>
