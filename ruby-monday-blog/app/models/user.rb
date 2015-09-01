@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   enum role: [:reader, :author, :admin]
 
   # If we're creating a new user record, set the default role unless otherwise noted.
-  after_initialize :set_default_role, if: :new_record?
+  before_create :set_default_role, if: :new_record?
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
