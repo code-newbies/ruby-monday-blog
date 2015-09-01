@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    set_post
     @tags = @post.tags
     authorize @post
   end
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    set_post
     authorize @post
   end
 
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    set_post
     authorize @post
 
     if @post.update_attributes(post_params)
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    set_post
     authorize @post
     if @post.destroy
       flash[:notice] = "Post has been deleted."
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
     end
   end
 
-  protected
+protected
 
   def authenticate_user!
     if user_signed_in?
@@ -69,10 +69,14 @@ class PostsController < ApplicationController
     end
   end
 
-  private
+private
 
   def post_params
     params.require(:post).permit(:body, :title, :image,
                                  tags_attributes: [:id, :content])
+  end
+
+  def set_post
+    @post ||= Post.find(params[:id])
   end
 end
