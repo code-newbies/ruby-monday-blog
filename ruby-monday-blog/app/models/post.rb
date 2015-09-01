@@ -18,12 +18,12 @@ class Post < ActiveRecord::Base
   # associations
   has_many :post_tags, inverse_of: :post
   has_many :tags, through: :post_tags
-  has_attached_file :image, styles: {:thumb => "100x100>"}
+  has_attached_file :image, styles: { thumb: '100x100>' }
   belongs_to :author, class_name: 'User'
   accepts_nested_attributes_for :tags
 
   # validations
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   validates :body, presence: true
   validates :title, presence: true
 
