@@ -15,34 +15,32 @@
 #
 
 class Post < ActiveRecord::Base
-
-  has_attached_file :image, styles: {:thumb => "100x100>"}
-
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-
+  # associations
   has_many :post_tags, inverse_of: :post
   has_many :tags, through: :post_tags
-
+  has_attached_file :image, styles: { thumb: '100x100>' }
   belongs_to :author, class_name: 'User'
+  accepts_nested_attributes_for :tags
 
+  # validations
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   validates :body, presence: true
   validates :title, presence: true
 
-  accepts_nested_attributes_for :tags
-
+  # scopes
   scope :ordered_by_created_at, -> { order(created_at: :desc) }
 
+  # gems
   paginates_per 10
 
+  # delegations
+  delegate :full_name, to: :author, prefix: true
+
+private
+
   def autosave_associated_records_for_tags
-    tags.each { |tag| self.tags << prepare_tag(tag) }
+    tags.each { |tag| tags << prepare_tag(tag) }
   end
-
-  def author_full_name
-    "#{author.first_name} #{author.last_name}"
-  end
-
-  private
 
   def prepare_tag(tag)
     Tag.find_or_create_by(content: tag.content.titleize)
