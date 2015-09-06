@@ -12,6 +12,12 @@
 #  image_file_size    :integer
 #  image_updated_at   :datetime
 #  author_id          :integer
+#  slug               :string
+#
+# Indexes
+#
+#  index_posts_on_author_id  (author_id)
+#  index_posts_on_slug       (slug) UNIQUE
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

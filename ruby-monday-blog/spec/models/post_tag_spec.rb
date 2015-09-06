@@ -5,6 +5,10 @@
 #  post_id :integer          not null
 #  tag_id  :integer          not null
 #
+# Indexes
+#
+#  index_post_tags_on_post_id_and_tag_id  (post_id,tag_id) UNIQUE
+#
 
 require 'rails_helper'
 

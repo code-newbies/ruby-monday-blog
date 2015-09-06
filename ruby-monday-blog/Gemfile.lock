@@ -98,6 +98,8 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.10)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     google-webfonts-rails (0.0.4)
@@ -285,6 +287,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (~> 4.4)
   faker (~> 1.4.3)
+  friendly_id (~> 5.1.0)
   google-webfonts-rails
   guard-livereload (~> 2.4)
   guard-rspec
@@ -308,4 +311,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.3
+   1.10.6

@@ -12,6 +12,12 @@
 #  image_file_size    :integer
 #  image_updated_at   :datetime
 #  author_id          :integer
+#  slug               :string
+#
+# Indexes
+#
+#  index_posts_on_author_id  (author_id)
+#  index_posts_on_slug       (slug) UNIQUE
 #
 
 class Post < ActiveRecord::Base
@@ -22,6 +28,8 @@ class Post < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
   accepts_nested_attributes_for :tags
 
+  before_validation :autosave_associated_records_for_tags
+
   # validations
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   validates :body, presence: true
@@ -31,6 +39,8 @@ class Post < ActiveRecord::Base
   scope :ordered_by_created_at, -> { order(created_at: :desc) }
 
   # gems
+  extend FriendlyId
+  friendly_id :title, use: :slugged
   paginates_per 10
 
   # delegations
@@ -39,7 +49,7 @@ class Post < ActiveRecord::Base
 private
 
   def autosave_associated_records_for_tags
-    tags.each { |tag| tags << prepare_tag(tag) }
+    self.tags = tags.map { |tag| prepare_tag(tag) }
   end
 
   def prepare_tag(tag)
