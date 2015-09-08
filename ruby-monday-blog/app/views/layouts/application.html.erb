@@ -2,39 +2,16 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ruby-Monday Blog</title>
+    <title>Ruby Monday Blog</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.png' %>
-    <%= google_webfonts_init({
-      google: ['Lato', 'Open Sans', 'Montserrat']
-    }) %>
-	</head>
-	<body>
-		<%= render 'layouts/nav' %>
-		
-		  <div class='flashes'>
-        <% if flash[:notice] %>
-           <div class="alert alert-success">
-             <button type="button" class="close" data-dismiss="alert">&times;</button>
-             <div class="text-uppercase"><%= flash[:notice] %></div>
-           </div>
-         <% elsif flash[:error] %>
-           <div class="alert alert-danger">
-             <button type="button" class="close" data-dismiss="alert">&times;</button>
-             <div class="text-uppercase"><%= flash[:error] %></div>
-           </div>
-         <% elsif flash[:alert] %>
-           <div class="alert alert-warning">
-             <button type="button" class="close" data-dismiss="alert">&times;</button>
-             <div class="text-uppercase"><%= flash[:alert] %></div>
-           </div>
-         <% end %>
-       </div>
-
-		<%= yield %>
-
-		
-	</body>
+    <%= google_webfonts_init({ google: ['Lato', 'Open Sans', 'Montserrat'] }) %>
+  </head>
+  <body>
+    <%= render 'layouts/nav' %>
+    <%= render 'layouts/flashes' %>
+    <%= yield %>
+  </body>
 </html>
