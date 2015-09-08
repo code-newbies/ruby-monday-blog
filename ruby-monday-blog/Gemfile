@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ### core dependencies
 gem 'rails', '4.2.0'
 gem 'pg'
+gem 'bundler', '1.10.6'
 # gem 'unicorn'
 
 ### front-end dependencies

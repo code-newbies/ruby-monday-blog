@@ -281,6 +281,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bundler (= 1.10.6)
   capybara (~> 2.4.4)
   devise
   factory_girl_rails (~> 4.4)
@@ -308,4 +309,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.3
+   1.10.6
