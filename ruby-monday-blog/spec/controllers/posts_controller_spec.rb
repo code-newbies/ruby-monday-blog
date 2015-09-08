@@ -16,8 +16,7 @@ describe PostsController do
   it "creates a new tag if it doesn't exist" do
     sign_in author
 
-    expect { post :create, params }
-      .to change{ Tag.count }.by (1)
+    expect { post :create, params }.to change{ Tag.count }.by (1)
   end
 
   it "can reuse a tag that already exists" do
@@ -26,8 +25,8 @@ describe PostsController do
     # Create a new tag
     post :create, params
 
-    expect { post :create, params }
-      .to_not change{ Tag.count }
+    expect { post :create, params }.to_not change{ Tag.count }
+    expect { post :create, params }.to change { Post.count }.by(1)
   end
 
   it "assigns current user as post's author" do

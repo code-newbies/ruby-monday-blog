@@ -22,6 +22,8 @@ class Post < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
   accepts_nested_attributes_for :tags
 
+  before_validation :autosave_associated_records_for_tags
+
   # validations
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   validates :body, presence: true
@@ -39,7 +41,7 @@ class Post < ActiveRecord::Base
 private
 
   def autosave_associated_records_for_tags
-    tags.each { |tag| tags << prepare_tag(tag) }
+    self.tags = tags.map { |tag| prepare_tag(tag) }
   end
 
   def prepare_tag(tag)
