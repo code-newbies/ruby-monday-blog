@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:new, :create]
   after_action :verify_authorized, except: :index
 
@@ -7,7 +8,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    set_post
     @tags = @post.tags
     authorize @post
   end
@@ -19,7 +19,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    set_post
     authorize @post
   end
 
@@ -36,7 +35,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    set_post
     authorize @post
 
     if @post.update_attributes(post_params)
@@ -48,7 +46,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    set_post
     authorize @post
     if @post.destroy
       flash[:notice] = "Post has been deleted."

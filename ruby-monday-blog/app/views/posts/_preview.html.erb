@@ -17,7 +17,7 @@
   <p class="post-body"><%= post.body %></p>
 
   <div class="clearfix">
-    <%= link_to 'View Comments', post_path(post, anchor: 'comments'), class: 'btn btn-link pull-right' %>
+    <%= link_to 'Comments', post_path(post, anchor: 'disqus_thread'), class: 'btn btn-link pull-right' %>
     <%= render 'tags/inline', tags: tags %>
   </div>
 <% end %>

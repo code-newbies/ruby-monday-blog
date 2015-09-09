@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ### core dependencies
 gem 'rails', '4.2.0'
 gem 'pg'
+gem 'bundler', '1.10.6'
 # gem 'unicorn'
 
 ### front-end dependencies
@@ -33,6 +34,7 @@ end
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.4'
   gem 'faker', '~> 1.4.3'
+  gem 'guard-rspec'
   gem 'populator'
   gem 'rspec-rails', '~> 3.0'
   gem 'spring'
@@ -42,6 +44,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'guard-livereload', '~> 2.4', require: false
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'web-console', '~> 2.0'
