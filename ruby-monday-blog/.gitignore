@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore rbenv version.
+.ruby-version
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
