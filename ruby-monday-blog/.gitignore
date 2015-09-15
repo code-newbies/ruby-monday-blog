@@ -7,10 +7,18 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore rbenv version.
+.ruby-version
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
 /tmp
 
+# Ignore local setup files
+/config/database.yml
+/config/secrets.yml
+
 # Ignore Sandi Meter-generated files and directories
 /sandi_meter/*
+
